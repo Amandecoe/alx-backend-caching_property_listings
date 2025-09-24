@@ -1,0 +1,24 @@
+version: 3.9
+
+services:
+   PostgreSQL:
+    image: postgres:latest
+    environment:
+     POSTGRES_DB = mydb
+     POSTGRES_USER = myuser
+     POSTGRES_PASSWORD = ''
+    volumes:
+     - postgres_data:/var/lib/postgresql/data 
+    ports:
+      - "5432 : 5432"
+
+   Redis:
+    image: redis:latest
+    container_name: redis_cont
+    ports:
+     - "6379:6379"
+    volumes:
+    - redis_date:/data 
+
+volumes:
+  postgres_data
