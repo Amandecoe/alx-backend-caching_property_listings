@@ -21,4 +21,4 @@ services:
     - redis_date:/data 
 
 volumes:
-  postgres_data
+  postgres_data:
