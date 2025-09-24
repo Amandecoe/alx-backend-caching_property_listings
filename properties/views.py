@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
-CACHE_TTL = 60 * 15
 
-@cache_page(CACHE_TTL)
+@cache_page(60 * 15)
 def property_list(request):
         properties =  Property.Objects.all().values('id','name','price','location')
         data = list(properties)
