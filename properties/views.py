@@ -7,4 +7,4 @@ from django.http import JsonResponse
 def property_list(request):
         properties =  Property.Objects.all().values('id','name','price','location')
         data = list(properties)
-        return JsonResponse(data, safe=False)
+        return JsonResponse({"data":data})
